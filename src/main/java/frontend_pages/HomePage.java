@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class HomePage extends Common {
     @FindBy(xpath = "//a[@href='/electronics']")
     public WebElement electronicsLink;
@@ -26,6 +28,8 @@ public class HomePage extends Common {
     public WebElement closeNotificationButton;
     @FindBy(xpath = "//a[@href='/cart']")
     public WebElement shoppingCartNotificationButton;
+
+    @FindBy(xpath = "//div[@class='header-links']//li") public List<WebElement> headerList;
 
     @FindBy(xpath = "//a[@href='/register?returnUrl=%2F']") public WebElement registerLink;
 
@@ -66,6 +70,15 @@ public class HomePage extends Common {
         click(shoppingCartNotificationButton);
     }
     public void clickRegister() {click(registerLink);}
+
+    public void clickHeaderMenu(String option) {
+        for(WebElement element : headerList) {
+            if(element.getText().contains(option)) {
+                click(element);
+                break;
+            }
+        }
+    }
 
 }
 

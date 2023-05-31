@@ -12,8 +12,18 @@ public class DesktopPage extends Common {
     @FindBy(xpath = "//button[@class='button-2 add-to-wishlist-button']") public List<WebElement> wishlistButton;
     @FindBy(xpath = "//h2[@class='product-title']") public List<WebElement> listProductNames;
     @FindBy(xpath = "//a[@href='/wishlist']") public WebElement wishListLink;
+    ////div[@class='item-grid']
+
     public DesktopPage() {
         PageFactory.initElements(driver, this);
+    }
+
+    public void selectProductFromDesktopPage(String productName) {
+        for (WebElement element : listProductNames) {
+            if(element.getText().contains(productName)) {
+                click(element);
+            }
+        }
     }
 
     public void clickAddToWishList(String productName) {

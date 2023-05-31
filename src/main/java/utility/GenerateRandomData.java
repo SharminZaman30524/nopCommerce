@@ -29,10 +29,18 @@ public class GenerateRandomData {
     public static int idNumber() {
         return usFaker.number().numberBetween(1,9999);
     }
+    public static String review() {
+        return usFaker.lorem().sentence();
+    }
+    public static String reviewTitle() {
+        return usFaker.lorem().word();
+    }
+    public static int rating() {return usFaker.number().numberBetween(1,5);}
+
 
 
     public static void main(String[] args) {
-        System.out.println(phone());
+        System.out.println(review());
     }
 
 }

@@ -9,7 +9,8 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="url" value="https://demo.nopcommerce.com/"/>
         <classes>
-            <class name="system_testing.TestAddToCart"/>
+           <!-- <class name="system_testing.TestAddToCart"/>-->
+            <class name="system_testing.TestWriteReview"/>
             <!--<class name="system_testing.TestRegisterUser"/>-->
             <!--<class name="system_testing.TestAddToWishList"/>-->
         </classes>
