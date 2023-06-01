@@ -32,6 +32,9 @@ public class HomePage extends Common {
     @FindBy(xpath = "//div[@class='header-links']//li") public List<WebElement> headerList;
 
     @FindBy(xpath = "//a[@href='/register?returnUrl=%2F']") public WebElement registerLink;
+    @FindBy(xpath = "//a[@href='/apparel']") public WebElement apparelLink;
+    @FindBy(xpath = "//a[@href='/shoes']") public WebElement shoesLink;
+    //@FindBy(xpath = "//ul[@class='top-menu notmobile']//a") public List<WebElement> topMenuOptionsLinks;
 
 
 
@@ -78,6 +81,20 @@ public class HomePage extends Common {
                 break;
             }
         }
+    }
+    /*public void selectTopMenuOption(String menuOption) {
+        for (WebElement element : topMenuOptionsLinks) {
+            if (element.getText().equalsIgnoreCase(menuOption)) {
+                click(element);
+                break;
+            }
+        }
+    }*/
+    public void hoverOverApparelMenuOption() {
+        hover(apparelLink);
+    }
+    public void clickShoesOption() {
+        click(shoesLink);
     }
 
 }
