@@ -2,6 +2,8 @@ package base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -31,9 +33,10 @@ public class Common {
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static JavascriptExecutor js;
+    public static Logger logger = LogManager.getLogger(Common.class.getName());
 
     @Parameters({"browser", "url"})
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void startUp(@Optional() String browser, @Optional() String url) {
         if (browser.equalsIgnoreCase("Chrome")) {
             String path = System.getProperty("user.dir") + File.separator + "downloads";
@@ -59,7 +62,7 @@ public class Common {
         js = (JavascriptExecutor) driver;
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult testResult) {
         if (ITestResult.FAILURE == testResult.getStatus()) {
             takeScreenshot(testResult.getName());

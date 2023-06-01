@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Generate Report">
+<!--
+          name="C:/Users/Sharmin Zaman/IdeaProjects/nop-Commerce/src/test/java/system_testing/TestAddToCart.java">
+-->
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://demo.nopcommerce.com/"/>
+
+        <groups>
+            <run>
+                <include name="sanity"></include>
+                <exclude name="regression"></exclude>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="system_testing.TestAddToCart">
+            <!--    <methods>
+                    <include name="testInvalidQuantityAddToCart"/>
+                    <include name="sanity"/>
+                    <include name="testAddProductValueOve1000"/>
+                </methods>-->
+            </class>
+            <class name="system_testing.TestAddToWishList">
+            </class>
+        </classes>
+    </test>
+</suite>

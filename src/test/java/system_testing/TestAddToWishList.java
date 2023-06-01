@@ -11,7 +11,7 @@ public class TestAddToWishList extends Common {
     HomePage homePage;
     DesktopPage desktopPage;
     WishlistPage wishlistPage;
-    @Test
+    @Test(groups = {"sanity"})
     public void testValidAddToWishList() throws InterruptedException {
         homePage = new HomePage();
         homePage.hoverOverComputersMenuOption();

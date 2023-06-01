@@ -18,7 +18,7 @@ public class TestAddToCart extends Common {
     WishlistPage wishlistPage;
     OrderDetailsPage orderDetailsPage;
 
-    @Test(enabled = false)
+    @Test(enabled = true, groups = {"negative"})
     public void testInvalidQuantityAddToCart() throws InterruptedException {
         homePage = new HomePage();
         homePage.hoverOverComputersMenuOption();
@@ -33,7 +33,7 @@ public class TestAddToCart extends Common {
         Thread.sleep(3000);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = true, groups = {"regression"})
     public void testValidAddToCart() throws InterruptedException {
         homePage = new HomePage();
         homePage.hoverOverComputersMenuOption();
@@ -67,7 +67,7 @@ public class TestAddToCart extends Common {
         Thread.sleep(3000);
     }
 
-    @Test (enabled = false)
+    @Test (enabled = true, groups ={"sanity,regression"})
     public void testAddProductValueOve1000() throws InterruptedException {
         homePage = new HomePage();
         homePage.hoverOverComputersMenuOption();
