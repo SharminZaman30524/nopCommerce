@@ -9,6 +9,7 @@ screenshot/
 *downloads
 test-output/
 logs/
+
 # Compiled class file
 *.class
 
